@@ -98,6 +98,14 @@ public class Rover {
         return STEP;
     }
 
+    public boolean isInPlateau(int x, int y){
+        if (!Plateau.getInstance().isInRange(x ,y)){
+            System.out.println("Caution" + this.m_name + " is out of bound " );
+            return false;
+        }
+        return true;
+    }
+
     public void operation(char instruction) throws AssertionError {
         switch(instruction){
          case 'L':
@@ -127,28 +135,28 @@ public class Rover {
         switch (orientation){
             case 'N':
             case 'n':
-                if((m_PosY + STEP ) > Plateau.getInstance().getUpperY()){
+                if (!isInPlateau(m_PosY + STEP,m_PosX)){
                     return;
                 }
                 m_PosY += STEP;
                 break;
             case 'E':
             case 'e':
-                if((m_PosX + STEP ) > Plateau.getInstance().getUpperX()){
+                if (!isInPlateau(m_PosX + STEP,m_PosY)){
                     return;
                 }
                 m_PosX += STEP;
                 break;
             case 'S':
             case 's':
-                if((m_PosY - STEP ) < Plateau.getInstance().getLowerY()){
+                if (!isInPlateau(m_PosY - STEP,m_PosX)){
                     return;
                 }
                 m_PosY -= STEP;
                 break;
             case 'W':
             case 'w':
-                if((m_PosX -STEP ) < Plateau.getInstance().getLowerX()){
+                if (!isInPlateau(m_PosX - STEP,m_PosY)){
                     return;
                 }
                 m_PosX -= STEP;

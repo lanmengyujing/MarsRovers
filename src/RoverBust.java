@@ -44,12 +44,12 @@ public class RoverBust {
         for(Rover roverIn : roverList ) {
          if ( (! roverIn.getName().equals(rover.getName())) && (roverIn.getPosX() == rover.getPosX())
                  && (roverIn.getPosY() == rover.getPosY())) {
-                System.out.println("Caution: Rovers Crash!");
+                System.out.println( "Caution:" + rover.getName()+" Rover Crash " + roverIn.getName() + " Rover");
                 m_bCrash = true;
-                return true;
+                break;
          }
         }
-        return false;
+        return m_bCrash;
     }
 
     public  void startMoving(){
@@ -64,9 +64,6 @@ public class RoverBust {
                     m_bCrash = checkCrash(rover);
                     m_bOutBound = isOutBound(rover);
                     if (m_bCrash||m_bOutBound){
-                        if ((!false)) {
-                            throw new AssertionError();
-                        }
                         return;
                     }
                 }

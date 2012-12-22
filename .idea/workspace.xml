@@ -18,6 +18,23 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <method_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/RoverBust.java" line="42" class="RoverBust" package="">
+        <option name="WATCH_ENTRY" value="true" />
+        <option name="WATCH_EXIT" value="true" />
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </method_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -61,16 +78,16 @@
       <file leaf-file-name="Rover.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Rover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="73" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoverBust.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RoverBust.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RoverBust.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="45" selection-start="411" selection-end="411" vertical-scroll-proportion="0.3321617">
+            <state line="67" column="47" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#258#265#0" expanded="true" />
               </folding>
@@ -81,23 +98,24 @@
       <file leaf-file-name="RoverTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="45" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+            <state line="22" column="67" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoverBustTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RoverBustTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/RoverBustTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="5" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
+            <state line="13" column="51" selection-start="271" selection-end="271" vertical-scroll-proportion="-0.30751708">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#624#631#0" expanded="true" />
                 <element signature="e#915#922#0" expanded="true" />
-                <element signature="e#1245#1252#0" expanded="true" />
-                <element signature="e#1851#1858#0" expanded="true" />
-                <element signature="e#2460#2467#0" expanded="true" />
+                <element signature="e#1489#1496#0" expanded="true" />
+                <element signature="e#1898#1905#0" expanded="true" />
+                <element signature="e#2504#2511#0" expanded="true" />
+                <element signature="e#3113#3120#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,10 +149,10 @@
         <option value="$PROJECT_DIR$/src/roverBust.java" />
         <option value="$PROJECT_DIR$/test/test.java" />
         <option value="$PROJECT_DIR$/test/RoverTest.java" />
-        <option value="$PROJECT_DIR$/src/Rover.java" />
         <option value="$PROJECT_DIR$/src/Plateau.java" />
-        <option value="$PROJECT_DIR$/test/RoverBustTest.java" />
+        <option value="$PROJECT_DIR$/src/Rover.java" />
         <option value="$PROJECT_DIR$/src/RoverBust.java" />
+        <option value="$PROJECT_DIR$/test/RoverBustTest.java" />
       </list>
     </option>
   </component>
@@ -318,14 +336,60 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.RoverBustTest">
-    <configuration default="false" name="RoverBustTest.should_OutPut_Be_1_4_W_When_Input_Rover_2_3_N_Instruction_LMRML" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="RoverBustTest.should_Rover_Out_Bound_When_Original_Position_Is_Negative4And7" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MarsRovers" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RoverBustTest" />
-      <option name="METHOD_NAME" value="should_OutPut_Be_1_4_W_When_Input_Rover_2_3_N_Instruction_LMRML" />
+      <option name="METHOD_NAME" value="should_Rover_Out_Bound_When_Original_Position_Is_Negative4And7" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="RoverBustTest.should_Rover_Out_Bound_When_Original_Position_Is_9And7" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="MarsRovers" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoverBustTest" />
+      <option name="METHOD_NAME" value="should_Rover_Out_Bound_When_Original_Position_Is_9And7" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="RoverBustTest.should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_3_S_Instruction_M" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="MarsRovers" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoverBustTest" />
+      <option name="METHOD_NAME" value="should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_3_S_Instruction_M" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -347,14 +411,14 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="RoverBustTest.should_OutPut_Be_1_2_N_When_Input_Rover_1_3_N_Instruction_LMLMLMLMM" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="RoverBustTest.should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_1_S_Instruction_M" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MarsRovers" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RoverBustTest" />
-      <option name="METHOD_NAME" value="should_OutPut_Be_1_2_N_When_Input_Rover_1_3_N_Instruction_LMLMLMLMM" />
+      <option name="METHOD_NAME" value="should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_1_S_Instruction_M" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -379,52 +443,6 @@
       <option name="MAIN_CLASS_NAME" value="RoverBustTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="RoverBustTest.should_OutPut_Be_5_1_E_When_Input_Rover_3_3_E_Instruction_MMRMMRMRRM" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="MarsRovers" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RoverBustTest" />
-      <option name="METHOD_NAME" value="should_OutPut_Be_5_1_E_When_Input_Rover_3_3_E_Instruction_MMRMMRMRRM" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="RoverBustTest.should_Rover_Out_Bound_When_Original_Position_Is_Negative4And7" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="MarsRovers" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RoverBustTest" />
-      <option name="METHOD_NAME" value="should_Rover_Out_Bound_When_Original_Position_Is_Negative4And7" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -560,11 +578,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_OutPut_Be_1_4_W_When_Input_Rover_2_3_N_Instruction_LMRML" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_OutPut_Be_1_2_N_When_Input_Rover_1_3_N_Instruction_LMLMLMLMM" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RoverBustTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_OutPut_Be_5_1_E_When_Input_Rover_3_3_E_Instruction_MMRMMRMRRM" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_Rover_Out_Bound_When_Original_Position_Is_Negative4And7" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_Rover_Out_Bound_When_Original_Position_Is_Negative4And7" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_Rover_Out_Bound_When_Original_Position_Is_9And7" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_3_S_Instruction_M" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RoverBustTest.should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_1_S_Instruction_M" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RoverBustTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -589,7 +607,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43914473" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51644737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -600,8 +618,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.22532895" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.36348686" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28733766" sideWeight="0.63980263" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36019737" sideWeight="0.9980237" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28733766" sideWeight="0.7861842" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2138158" sideWeight="0.9980237" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -673,13 +691,6 @@
         <state line="12" column="26" selection-start="552" selection-end="552" vertical-scroll-proportion="0.5459559" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="45" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="27" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
@@ -689,30 +700,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Rover.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="73" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="25" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.37320575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="397" selection-end="397" vertical-scroll-proportion="0.7323077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoverBust.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="47" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#258#265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="19" selection-start="424" selection-end="424" vertical-scroll-proportion="0.28871894">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RoverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="67" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/RoverBustTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="5" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
+        <state line="13" column="51" selection-start="271" selection-end="271" vertical-scroll-proportion="-0.30751708">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#624#631#0" expanded="true" />
             <element signature="e#915#922#0" expanded="true" />
-            <element signature="e#1245#1252#0" expanded="true" />
-            <element signature="e#1851#1858#0" expanded="true" />
-            <element signature="e#2460#2467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoverBust.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="45" selection-start="411" selection-end="411" vertical-scroll-proportion="0.3321617">
-          <folding>
-            <element signature="e#258#265#0" expanded="true" />
+            <element signature="e#1489#1496#0" expanded="true" />
+            <element signature="e#1898#1905#0" expanded="true" />
+            <element signature="e#2504#2511#0" expanded="true" />
+            <element signature="e#3113#3120#0" expanded="true" />
           </folding>
         </state>
       </provider>

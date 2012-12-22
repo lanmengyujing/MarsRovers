@@ -36,6 +36,24 @@ public class RoverBustTest {
     }
 
     @Test
+    public void should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_1_S_Instruction_M(){
+        Rover rover = new Rover("Green",1,1,'N');
+        if (roverBust.isInstructionValid("M")){
+            rover.setInstruction("M");
+        }
+        Rover roverNext = new Rover("David",1,1,'s');
+        if (roverBust.isInstructionValid("M")){
+            roverNext.setInstruction("M");
+        }
+        ArrayList<Rover> roverList = new ArrayList<Rover>();
+        roverList.add(rover);
+        roverList.add(roverNext);
+
+        roverBust.setRovers(roverList);
+        assertThat(roverBust.checkCrash(roverNext),is(true));
+    }
+
+    @Test
     public void should_OutPut_Be_1_4_W_When_Input_Rover_2_3_N_Instruction_LMRML(){
         Rover rover = new Rover(2,3,'N');
         rover.setInstruction("LMRmL");
@@ -78,4 +96,6 @@ public class RoverBustTest {
         assertThat(roverList.get(0).getPosY(),is(1));
         assertThat(roverList.get(0).getOrientation(),is('E'));
     }
+
+
 }
