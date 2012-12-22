@@ -10,18 +10,21 @@ public class Rover {
     private int m_PosY = 0;
     private char m_Orientation = ' ';
     private String m_Instruction = " ";
+    private int STEP = 1;
 
     public Rover(int posX, int posY,char orientation){
         m_PosX = posX;
         m_PosY = posY;
         m_Orientation = orientation;
+
     }
 
-    public Rover(String name,int posX, int posY, char orientation ){
+    public Rover(String name,int posX, int posY, char orientation){
         m_name = name;
         m_PosX = posX;
         m_PosY = posY;
         m_Orientation = orientation;
+
     }
     public void setName(String name) {
         m_name = name;
@@ -87,6 +90,14 @@ public class Rover {
            return  m_Instruction ;
     }
 
+    public void setStep(int step){
+        this.STEP = step;
+    }
+
+    public int getStep(){
+        return STEP;
+    }
+
     public void operation(char instruction) throws AssertionError {
         switch(instruction){
          case 'L':
@@ -116,19 +127,31 @@ public class Rover {
         switch (orientation){
             case 'N':
             case 'n':
-                ++m_PosY;
+                if((m_PosY + STEP ) > Plateau.getInstance().getUpperY()){
+                    return;
+                }
+                m_PosY += STEP;
                 break;
             case 'E':
             case 'e':
-                ++m_PosX;
+                if((m_PosX + STEP ) > Plateau.getInstance().getUpperX()){
+                    return;
+                }
+                m_PosX += STEP;
                 break;
             case 'S':
             case 's':
-                --m_PosY;
+                if((m_PosY - STEP ) < Plateau.getInstance().getLowerY()){
+                    return;
+                }
+                m_PosY -= STEP;
                 break;
             case 'W':
             case 'w':
-                --m_PosX;
+                if((m_PosX -STEP ) < Plateau.getInstance().getLowerX()){
+                    return;
+                }
+                m_PosX -= STEP;
                 break;
             default:
                 if ((!false)) {

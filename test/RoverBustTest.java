@@ -1,3 +1,4 @@
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,14 +14,9 @@ public class RoverBustTest {
 
     @Before
     public void setup(){
-        roverBust = new RoverBust(5,5);
-    }
-
-    @Test
-    public void should_Range_Be_5And6_When_SetRange_5And6(){
-        roverBust.setRange(6,6);
-        assertThat(roverBust.getRangeX(),is(6));
-        assertThat(roverBust.getRangeY(),is(6));
+        Plateau.getInstance().setUpperX(5);
+        Plateau.getInstance().setUpperY(5);
+        roverBust = new RoverBust();
     }
 
     @Test
