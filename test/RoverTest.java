@@ -50,5 +50,11 @@ public class RoverTest {
         assertThat(rover.getPosY(), is(1));
     }
 
+    @Test
+    public void should_print_RIP_when_rover_is_out_bound() {
+        rover = new Rover("Ton", -2, 0, 'N');
+        assertThat(rover.toString(), equalTo("Ton -2 0 N RIP"));
+    }
+
 
 }

@@ -148,6 +148,10 @@ public class Rover {
     @Override
     public String toString() {
         char ori = getOrientation();
-        return m_name + ' ' + m_PosX + " " + m_PosY + " " + ori;
+        if (isInPlateau(m_PosX, m_PosY)) {
+            return m_name + ' ' + m_PosX + " " + m_PosY + " " + ori;
+        } else {
+            return m_name + ' ' + m_PosX + " " + m_PosY + " " + ori + " RIP";
+        }
     }
 }
