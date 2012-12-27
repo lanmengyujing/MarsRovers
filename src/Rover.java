@@ -6,37 +6,37 @@ public class Rover {
 
     public static final int INS_LEN = 100;
 
-    private String m_name = " ";
-    private int m_PosX = 0;
-    private int m_PosY = 0;
-    private char m_Orientation = ' ';
-    private String m_Instruction = " ";
+    private String name = " ";
+    private int posX = 0;
+    private int posY = 0;
+    private char orientation = ' ';
+    private String instruction = " ";
 
     public Rover(int posX, int posY, char orientation) {
-        m_PosX = posX;
-        m_PosY = posY;
+        this.posX = posX;
+        this.posY = posY;
         setOrientation(orientation);
 
     }
 
     public Rover(String name, int posX, int posY, char orientation) {
-        m_name = name;
-        m_PosX = posX;
-        m_PosY = posY;
+        this.name = name;
+        this.posX = posX;
+        this.posY = posY;
         setOrientation(orientation);
 
     }
 
     public String getName() {
-        return m_name;
+        return name;
     }
 
     public int getPosX() {
-        return m_PosX;
+        return posX;
     }
 
     public int getPosY() {
-        return m_PosY;
+        return posY;
     }
 
     private void setOrientation(char ori) {
@@ -44,7 +44,7 @@ public class Rover {
 
         for (char ORIENTATION : ORIENTATIONS) {
             if (orientation == ORIENTATION) {
-                m_Orientation = orientation;
+                this.orientation = orientation;
                 return;
             }
         }
@@ -52,22 +52,22 @@ public class Rover {
     }
 
     public char getOrientation() {
-        return m_Orientation;
+        return orientation;
     }
 
     public void setInstruction(String insList) {
         if (!insList.isEmpty() && insList.length() < INS_LEN) {
-            m_Instruction = insList;
+            instruction = insList;
         }
     }
 
     public String getInstruction() {
-        return m_Instruction;
+        return instruction;
     }
 
     public boolean isInPlateau(int x, int y) {
         if (!Plateau.getInstance().isInRange(x, y)) {
-            System.out.println("Caution" + this.m_name + " is out of bound ");
+            System.out.println("Caution" + this.name + " is out of bound ");
             return false;
         }
         return true;
@@ -101,31 +101,31 @@ public class Rover {
             case 'N':
             case 'n':
 
-                if (!isInPlateau(m_PosY + 1, m_PosX)) {
+                if (!isInPlateau(posY + 1, posX)) {
                     return;
                 }
-                m_PosY += 1;
+                posY += 1;
                 break;
             case 'E':
             case 'e':
-                if (!isInPlateau(m_PosX + 1, m_PosY)) {
+                if (!isInPlateau(posX + 1, posY)) {
                     return;
                 }
-                m_PosX += 1;
+                posX += 1;
                 break;
             case 'S':
             case 's':
-                if (!isInPlateau(m_PosY - 1, m_PosX)) {
+                if (!isInPlateau(posY - 1, posX)) {
                     return;
                 }
-                m_PosY -= 1;
+                posY -= 1;
                 break;
             case 'W':
             case 'w':
-                if (!isInPlateau(m_PosX - 1, m_PosY)) {
+                if (!isInPlateau(posX - 1, posY)) {
                     return;
                 }
-                m_PosX -= 1;
+                posX -= 1;
                 break;
             default:
                 throw new AssertionError();
@@ -134,24 +134,24 @@ public class Rover {
     }
 
     private void turnLeft() {
-        int index = ORIENTATIONS.indexOf(m_Orientation);
+        int index = ORIENTATIONS.indexOf(orientation);
         index = (index + ORIENTATIONS.size() - 1) % ORIENTATIONS.size();
-        m_Orientation = ORIENTATIONS.get(index);
+        orientation = ORIENTATIONS.get(index);
     }
 
     private void turnRight() {
-        int index = ORIENTATIONS.indexOf(m_Orientation);
+        int index = ORIENTATIONS.indexOf(orientation);
         index = (index + 1) % ORIENTATIONS.size();
-        m_Orientation = ORIENTATIONS.get(index);
+        orientation = ORIENTATIONS.get(index);
     }
 
     @Override
     public String toString() {
         char ori = getOrientation();
-        if (isInPlateau(m_PosX, m_PosY)) {
-            return m_name + ' ' + m_PosX + " " + m_PosY + " " + ori;
+        if (isInPlateau(posX, posY)) {
+            return name + ' ' + posX + " " + posY + " " + ori;
         } else {
-            return m_name + ' ' + m_PosX + " " + m_PosY + " " + ori + " RIP";
+            return name + ' ' + posX + " " + posY + " " + ori + " RIP";
         }
     }
 }

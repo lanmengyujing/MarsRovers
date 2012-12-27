@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
 public class RoverBust {
-    private boolean m_bOutBound = false;//是否出界
-    private boolean m_bCrash = false;//是否冲撞
-
     private ArrayList<Rover> roverList = new ArrayList<Rover>();
 
     public void setRovers(ArrayList<Rover> roverList) {
@@ -15,15 +12,15 @@ public class RoverBust {
     }
 
     public boolean isOutBound(Rover rover) {
+        boolean outBound = false;
         int x = rover.getPosX();
         int y = rover.getPosY();
         String name = rover.getName();
         if (!Plateau.getInstance().isInRange(x, y)) {
-            m_bOutBound = true;
+            outBound = true;
             System.out.println("Caution: " + name + " Out of bound!");
-            return true;
         }
-        return false;
+        return outBound;
     }
 
     public boolean isInstructionValid(String instrcution) {
@@ -39,15 +36,16 @@ public class RoverBust {
     }
 
     public boolean checkCrash(Rover rover) {
+        boolean doesCrash = false;
         for (Rover roverIn : roverList) {
             if ((!roverIn.getName().equals(rover.getName())) && (roverIn.getPosX() == rover.getPosX())
                     && (roverIn.getPosY() == rover.getPosY())) {
                 System.out.println("Caution:" + rover.getName() + " Rover Crash " + roverIn.getName() + " Rover");
-                m_bCrash = true;
+                doesCrash = true;
                 break;
             }
         }
-        return m_bCrash;
+        return doesCrash;
     }
 
     public void startMoving() {
@@ -59,10 +57,8 @@ public class RoverBust {
                 for (int i = 0; i < instr.length(); i++) {
                     char command = instr.charAt(i);
                     rover.operation(command);
-                    m_bCrash = checkCrash(rover);
-                    m_bOutBound = isOutBound(rover);
-                    if (m_bCrash || m_bOutBound) {
-                        return;
+                    if (checkCrash(rover) || isOutBound(rover)) {
+                        throw new AssertionError();
                     }
                 }
             }
