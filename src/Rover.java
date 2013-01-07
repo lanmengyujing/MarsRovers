@@ -1,3 +1,5 @@
+import javax.activation.MailcapCommandMap;
+import java.rmi.activation.ActivationGroupDesc;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,7 +18,6 @@ public class Rover {
         this.posX = posX;
         this.posY = posY;
         setOrientation(orientation);
-
     }
 
     public Rover(String name, int posX, int posY, char orientation) {
@@ -24,7 +25,6 @@ public class Rover {
         this.posX = posX;
         this.posY = posY;
         setOrientation(orientation);
-
     }
 
     public String getName() {
@@ -35,11 +35,19 @@ public class Rover {
         return posX;
     }
 
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
     public int getPosY() {
         return posY;
     }
 
-    private void setOrientation(char ori) {
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+
+    public void setOrientation(char ori) {
         char orientation = Character.toUpperCase(ori);
 
         for (char ORIENTATION : ORIENTATIONS) {
@@ -67,82 +75,20 @@ public class Rover {
 
     public boolean isInPlateau(int x, int y) {
         if (!Plateau.getInstance().isInRange(x, y)) {
-            System.out.println("Caution" + this.name + " is out of bound ");
+            System.out.println("Caution " + this.name + " is out of bound ");
             return false;
         }
         return true;
     }
 
     public void operation(char instruction) throws AssertionError {
-        switch (instruction) {
-            case 'L':
-            case 'l':
-                turnLeft();
-                break;
-            case 'R':
-            case 'r':
-                turnRight();
-                break;
-            case ' ':
-                break;
-            case 'M':
-            case 'm':
-                moveForward();
-                break;
-            default:
-                throw new AssertionError();
-
+        Command  command = CommandFactory.createCommand(this,instruction );
+        try{
+            command.action();
+        }catch (OutOfBoundException e){
+            e.printStackTrace();
         }
-    }
 
-    private void moveForward() throws AssertionError {
-
-        switch (this.getOrientation()) {
-            case 'N':
-            case 'n':
-
-                if (!isInPlateau(posY + 1, posX)) {
-                    return;
-                }
-                posY += 1;
-                break;
-            case 'E':
-            case 'e':
-                if (!isInPlateau(posX + 1, posY)) {
-                    return;
-                }
-                posX += 1;
-                break;
-            case 'S':
-            case 's':
-                if (!isInPlateau(posY - 1, posX)) {
-                    return;
-                }
-                posY -= 1;
-                break;
-            case 'W':
-            case 'w':
-                if (!isInPlateau(posX - 1, posY)) {
-                    return;
-                }
-                posX -= 1;
-                break;
-            default:
-                throw new AssertionError();
-
-        }
-    }
-
-    private void turnLeft() {
-        int index = ORIENTATIONS.indexOf(orientation);
-        index = (index + ORIENTATIONS.size() - 1) % ORIENTATIONS.size();
-        orientation = ORIENTATIONS.get(index);
-    }
-
-    private void turnRight() {
-        int index = ORIENTATIONS.indexOf(orientation);
-        index = (index + 1) % ORIENTATIONS.size();
-        orientation = ORIENTATIONS.get(index);
     }
 
     @Override
