@@ -1,3 +1,5 @@
+import MarsRover.Plateau;
+import MarsRover.Rover;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,7 +25,7 @@ public class RoverTest {
         assertThat(rover.getName(), equalTo("Tom"));
         assertThat(rover.getPosX(), is(5));
         assertThat(rover.getPosY(), is(6));
-        assertThat(rover.getOrientation(), is('S'));
+        assertThat(rover.getOrientation().orientationName(), is('S'));
     }
 
     @Test
@@ -35,13 +37,13 @@ public class RoverTest {
     @Test
     public void should_Orientation_Be_W_When_Command_is_L() {
         rover.operation('L');
-        assertThat(rover.getOrientation(), is('W'));
+        assertThat(rover.getOrientation().orientationName(), is('W'));
     }
 
     @Test
     public void should_Orientation_Be_E_When_Command_is_R() {
-        rover.operation('R');
-        assertThat(rover.getOrientation(), is('E'));
+        rover.operation('r');
+        assertThat(rover.getOrientation().orientationName(), is('E'));
     }
 
     @Test
@@ -53,7 +55,7 @@ public class RoverTest {
     @Test
     public void should_print_RIP_when_rover_is_out_bound() {
         rover = new Rover("Ton", -2, 0, 'N');
-        assertThat(rover.toString(), equalTo("Ton -2 0 N RIP"));
+        assertThat(rover.toString(), equalTo("-2 0 N RIP"));
     }
 
 
