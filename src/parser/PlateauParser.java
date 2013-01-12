@@ -16,7 +16,7 @@ public class PlateauParser implements parser {
     private int upperY;
 
     @Override
-    public boolean parse(String area) {
+    public boolean parse(String area)  {
         Pattern pattern = Pattern.compile(regEx);
         Matcher m = pattern.matcher(area);
         if(m.find()){

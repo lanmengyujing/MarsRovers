@@ -16,8 +16,7 @@ import static org.junit.Assert.assertThat;
  * To change this template use File | Settings | File Templates.
  */
 public class RoverManagerTest {
-    private RoverManager manager ;
-    private RoverBust roverBust;
+    private RoverManager manager;
     private Rover rover;
     @Before
     public void setup(){
@@ -25,9 +24,7 @@ public class RoverManagerTest {
         Plateau.getInstance().setUpperY(5);
 
         manager = new RoverManager();
-        roverBust = new RoverBust();
         rover = new Rover("Tony");
-        roverBust.addRover(rover);
     }
 
     @Test
@@ -42,8 +39,7 @@ public class RoverManagerTest {
     public void should_OutPut_Be_5_1_E_When_Input_Rover_3_3_E_Instruction_MMRMMRMRRM(){
         manager.initPositionAndOrientation(rover, "3 3 E");
         manager.initCommand(rover,"MMRMMRMRRM");
-        roverBust.runRover(rover);
-        assertThat(rover.toString(),is("5 1 E"));
+        assertThat(rover.getInstruction(),is("MMRMMRMRRM"));
     }
 
 }

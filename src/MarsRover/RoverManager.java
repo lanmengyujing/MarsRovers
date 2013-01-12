@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class RoverManager {
-    public void initPositionAndOrientation(Rover rover, String posAndOri){
+    public void initPositionAndOrientation (Rover rover, String posAndOri)throws OutOfBoundException{
         PositionAndOrientationParser parser = new PositionAndOrientationParser();
         if (parser.parse(posAndOri)){
             if (isInputPositionOutBound(parser.getPosX(), parser.getPosY())) {

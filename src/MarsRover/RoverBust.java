@@ -5,10 +5,6 @@ import java.util.ArrayList;
 public class RoverBust {
     private ArrayList<Rover> roverList = new ArrayList<Rover>();
 
-    public void setRovers(ArrayList<Rover> roverList) {
-        this.roverList = roverList;
-    }
-
     public ArrayList<Rover> getRovers() {
         return roverList;
     }
@@ -19,7 +15,6 @@ public class RoverBust {
 
     public boolean isOutBound(Rover rover) {
         boolean outBound = false;
-        String name = rover.getName();
         if (!Plateau.getInstance().isInRange(rover.getPosX(), rover.getPosY())) {
             outBound = true;
         }

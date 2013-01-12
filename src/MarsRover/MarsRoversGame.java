@@ -53,12 +53,12 @@ public class MarsRoversGame {
     public void startGame() {
         init();
 
-        int x = 0;
+        int id = 0;
         try {
             String strPos = bf.readLine();
             while (strPos != null) {
-                x++;
-                Rover rover = new Rover(Integer.toString(x));
+                id++;
+                Rover rover = new Rover(Integer.toString(id));
                 placeRover(rover, strPos);
 
                 String strCommand = bf.readLine();
