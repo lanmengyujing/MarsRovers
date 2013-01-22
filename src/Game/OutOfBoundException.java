@@ -1,4 +1,4 @@
-package MarsRover;
+package Game;
 
 /**
  * Created with IntelliJ IDEA.

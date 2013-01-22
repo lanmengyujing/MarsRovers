@@ -1,8 +1,8 @@
 package direction;
 
-import MarsRover.OutOfBoundException;
-import MarsRover.Plateau;
-import MarsRover.Rover;
+import Game.OutOfBoundException;
+import Game.Plateau;
+import Game.Rover;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,9 +11,15 @@ import MarsRover.Rover;
  * Time: 下午10:34
  * To change this template use File | Settings | File Templates.
  */
-public class WAction implements Orientation {
+public class WState implements State {
+    Rover rover;
+
+    public WState(Rover rover) {
+        this.rover = rover;
+    }
+
     @Override
-    public void forward(Rover rover) {
+    public void forward() {
         if (!Plateau.getInstance().isInRange(rover.getPosX() - 1, rover.getPosY())){
             throw new OutOfBoundException();
         }
@@ -21,13 +27,13 @@ public class WAction implements Orientation {
     }
 
     @Override
-    public Orientation turnLeft() {
-        return new SAction();
+    public void turnLeft() {
+        rover.setOrientation(new SState(rover));
     }
 
     @Override
-    public Orientation turnRight() {
-        return new NAction();
+    public void turnRight() {
+        rover.setOrientation(new NState(rover));
     }
 
     @Override

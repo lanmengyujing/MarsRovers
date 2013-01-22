@@ -1,7 +1,5 @@
 package direction;
 
-import MarsRover.Rover;
-
 /**
  * Created with IntelliJ IDEA.
  * User: dell
@@ -9,13 +7,13 @@ import MarsRover.Rover;
  * Time: 下午10:24
  * To change this template use File | Settings | File Templates.
  */
-public interface Orientation {
+public interface State {
 
-    public void forward(Rover rover);
+    public void forward();
 
-    public Orientation turnLeft();
+    public void turnLeft();
 
-    public Orientation turnRight();
+    public void turnRight();
 
     public char orientationName();
 }

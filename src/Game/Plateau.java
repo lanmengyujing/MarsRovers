@@ -1,4 +1,4 @@
-package MarsRover;
+package Game;
 
 public class Plateau {
     private int upperX;

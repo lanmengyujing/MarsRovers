@@ -1,22 +1,18 @@
-package MarsRover;
-
-import command.AbstractFactory;
-import command.Command;
+package Game;
 import direction.*;
+
+import java.lang.reflect.Constructor;
 
 public class Rover {
     public static final int INS_LEN = 100;
-
     private String name = " ";
     private int posX = 0;
     private int posY = 0;
-
     private String instruction = " ";
 
-    Orientation orientation ;
+    State orientation;
 
-    public Rover (String name){
-        this.name = name;
+    public Rover (){
     }
 
     public Rover(int posX, int posY, char orientation) {
@@ -54,20 +50,23 @@ public class Rover {
 
     public void setOrientation(char ori) {
         char charOrientation = Character.toUpperCase(ori);
-        String className = new StringBuilder().append("direction.").append(charOrientation).append("Action").toString();
+        String className = new StringBuilder().append("direction.").append(charOrientation).append("State").toString();
         try {
-            Class orientationClass = Class.forName(className);
-            this.orientation = (Orientation) orientationClass.newInstance();
-        } catch (Exception e) {
+            Class<?> orientationClass = Class.forName(className);
+            Constructor constructor = orientationClass.getConstructor(Rover.class);
+            this.orientation = (State)constructor.newInstance(this);
+        }catch (ClassNotFoundException e) {
+            throw new IllegalArgumentException();
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void setOrientation(Orientation orientation) {
+    public void setOrientation(State orientation) {
         this.orientation = orientation;
     }
 
-    public Orientation getOrientation() {
+    public State getOrientation() {
         return orientation;
     }
 
@@ -89,15 +88,34 @@ public class Rover {
         return true;
     }
 
-    public void operation(char instruction) throws AssertionError {
+    public void operation(char instruction){
         instruction = Character.toUpperCase(instruction);
-        AbstractFactory abstractFactory =  AbstractFactory.getInstance(instruction);
-        Command command = abstractFactory.createCommand(this);
-        try{
-            command.action();
-        }catch (OutOfBoundException e){
-            e.printStackTrace();
+        switch (instruction) {
+            case 'M':
+                forward();
+                break;
+            case 'R':
+                turnRight();
+                break;
+            case 'L':
+                turnLeft();
+                break;
+            default:
+                throw  new AssertionError();
         }
+
+    }
+
+    private void forward() {
+        orientation.forward();
+    }
+
+    private void turnRight() {
+        orientation.turnRight();
+    }
+
+    private void turnLeft() {
+        orientation.turnLeft();
     }
 
     @Override

@@ -1,5 +1,5 @@
-import MarsRover.Plateau;
-import MarsRover.Rover;
+package Game;
+
 import org.junit.Before;
 import org.junit.Test;
 

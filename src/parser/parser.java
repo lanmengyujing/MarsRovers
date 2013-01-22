@@ -10,6 +10,6 @@ import javax.swing.text.Position;
  * To change this template use File | Settings | File Templates.
  */
 public interface parser {
-    public boolean parse(String s);
+    public void parse(String s);
 
 }

@@ -10,24 +10,22 @@ import java.util.regex.Pattern;
  * Time: 上午9:46
  * To change this template use File | Settings | File Templates.
  */
-public class CommandParser implements parser {
+public class InstructionParser implements parser {
     private String regEx = "^[L|M|R]*$";
-    String commands;
+    String instruction;
 
     @Override
-    public boolean parse(String instruction) {
+    public void parse(String instruction) {
         instruction = instruction.toUpperCase();
-        Pattern pattern = Pattern.compile(regEx);
-        Matcher m = pattern.matcher(instruction);
-        if (m.find()){
-            this.commands = instruction;
-            return true;
-        }else {
+        try {
+            Match.matchCondition(regEx, instruction);
+            this.instruction = instruction;
+        } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("The input commands for rover are not valid!");
         }
     }
 
-    public String getCommands(){
-        return commands;
+    public String getInsruction() {
+        return instruction;
     }
 }

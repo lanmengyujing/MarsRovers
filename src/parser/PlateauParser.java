@@ -11,29 +11,27 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class PlateauParser implements parser {
-    private String regEx ="^(\\d*)\\s(\\d*)$";   //"^(\\d*) (\\d*)$"
+    private String regEx = "^(\\d*)\\s(\\d*)\\s*$";
     private int upperX;
     private int upperY;
 
     @Override
-    public boolean parse(String area)  {
-        Pattern pattern = Pattern.compile(regEx);
-        Matcher m = pattern.matcher(area);
-        if(m.find()){
+    public void parse(String area) {
+        try {
+            Match.matchCondition(regEx, area);
             String[] inputArea = area.split(" ");
             upperX = Integer.valueOf(inputArea[0]);
             upperY = Integer.valueOf(inputArea[1]);
-            return true;
-        }else{
+        } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("The input area for Plateau is not valid");
         }
     }
 
-    public int getUpperX(){
+    public int getUpperX() {
         return upperX;
     }
 
-    public int getUpperY(){
+    public int getUpperY() {
         return upperY;
     }
 }

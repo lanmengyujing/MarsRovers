@@ -6,19 +6,23 @@
  * To change this template use File | Settings | File Templates.
  */
 
+import Game.MarsRoverGameTest;
+import Game.RoverTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import parser.InstructionParseTest;
+import parser.PlaceParserTest;
+import parser.PlateauParserTest;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         RoverTest.class,
-        RoverBustTest.class,
-        RoverManagerTest.class,
-        MarsRoversGameTest.class,
+        //RoverBustTest.class,
+        MarsRoverGameTest.class,
         PlateauParserTest.class,
-        CommandParseTest.class,
-        PositionAndOrientationParserTest.class
+        InstructionParseTest.class,
+        PlaceParserTest.class
 })
 
 public class AllClassesTest {

@@ -1,7 +1,7 @@
-import MarsRover.Plateau;
+package parser;
+
 import org.junit.Before;
 import org.junit.Test;
-import parser.PlateauParser;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
