@@ -1,12 +1,5 @@
 package parser;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-9
- * Time: 上午9:25
- * To change this template use File | Settings | File Templates.
- */
 public class PlaceParser implements parser {
     String regEx = "^\\s*\\d*+\\s+\\d*+\\s+[N|S|W|E]\\s*$";
     int posX;

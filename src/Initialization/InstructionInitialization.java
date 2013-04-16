@@ -3,13 +3,6 @@ package Initialization;
 import Game.Rover;
 import parser.InstructionParser;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-19
- * Time: 下午9:41
- * To change this template use File | Settings | File Templates.
- */
 public class InstructionInitialization extends InitCommand {
     private Rover rover;
 

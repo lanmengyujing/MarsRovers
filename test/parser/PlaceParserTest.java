@@ -2,18 +2,10 @@ package parser;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-9
- * Time: 下午4:21
- * To change this template use File | Settings | File Templates.
- */
 public class PlaceParserTest {
     private PlaceParser parser;
 

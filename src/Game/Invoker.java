@@ -1,14 +1,8 @@
 package Game;
 
 import Initialization.InitCommand;
+import exception.GameException;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-19
- * Time: 下午9:56
- * To change this template use File | Settings | File Templates.
- */
 public class Invoker {
     InitCommand initCommand;
     public void setInitCommand(InitCommand initCommand){
@@ -16,6 +10,10 @@ public class Invoker {
     }
 
     public void initialize(){
-        initCommand.configure();
+        try{
+            initCommand.configure();
+        }catch (GameException e){
+            System.out.println(e.getMessage());
+        }
     }
 }

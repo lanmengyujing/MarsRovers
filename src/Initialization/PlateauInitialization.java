@@ -3,13 +3,6 @@ package Initialization;
 import Game.Plateau;
 import parser.PlateauParser;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-19
- * Time: 下午9:29
- * To change this template use File | Settings | File Templates.
- */
 public class PlateauInitialization extends InitCommand {
 
     public PlateauInitialization(String command) {

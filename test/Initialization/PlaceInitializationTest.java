@@ -6,13 +6,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-20
- * Time: 上午10:34
- * To change this template use File | Settings | File Templates.
- */
 public class PlaceInitializationTest {
     @Test
     public void should_rover_in_23N_when_input_23N() {

@@ -1,5 +1,8 @@
 package Game;
 
+import exception.CrashException;
+import exception.GameException;
+
 import java.util.ArrayList;
 
 public class RoverBust {
@@ -15,7 +18,7 @@ public class RoverBust {
                     && (roverIn.getPosX() == rover.getPosX())
                     && (roverIn.getPosY() == rover.getPosY())) {
                 System.out.println("Caution:  Rover " + rover.getName() + " Crash  Rover " + roverIn.getName() );
-                throw new RuntimeException("Rovers crash each other");
+                throw new CrashException();
             }
         }
     }
@@ -25,7 +28,11 @@ public class RoverBust {
         for(int index = 0; index < instruction.length(); index ++){
             char command = instruction.charAt(index);
             rover.operation(command);
-            checkCrash(rover);
+            try{
+                checkCrash(rover);
+            }catch (GameException e){
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

@@ -1,17 +1,10 @@
 package Initialization;
 
-import Game.OutOfBoundException;
+import exception.OutOfBoundException;
 import Game.Plateau;
 import Game.Rover;
 import parser.PlaceParser;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-19
- * Time: 下午9:47
- * To change this template use File | Settings | File Templates.
- */
 public class PlaceInitialization extends InitCommand {
     private Rover rover;
 

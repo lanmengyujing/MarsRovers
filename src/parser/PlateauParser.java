@@ -1,15 +1,5 @@
 package parser;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-9
- * Time: 上午9:38
- * To change this template use File | Settings | File Templates.
- */
 public class PlateauParser implements parser {
     private String regEx = "^(\\d*)\\s(\\d*)\\s*$";
     private int upperX;

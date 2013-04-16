@@ -1,7 +1,8 @@
 package Game;
 
+import exception.CrashException;
+import exception.OutOfBoundException;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -33,7 +34,7 @@ public class RoverBustTest {
     }
 
 
-    @Test  (expected = RuntimeException.class)
+    @Test  (expected = CrashException.class)
     public void should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_3_S_Instruction_M(){
         client.setRoverPlace("1 1 n", rover);
         client.setRoverInstruction("m", rover);
@@ -79,5 +80,4 @@ public class RoverBustTest {
         assertThat(rover.getPosY(),is(1));
         assertThat(rover.getOrientation().orientationName(),is('E'));
     }
-
 }

@@ -5,13 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-19
- * Time: 下午10:17
- * To change this template use File | Settings | File Templates.
- */
 public class MarsRoverGame {
     private Client client;
     private RoverBust bust = new RoverBust();

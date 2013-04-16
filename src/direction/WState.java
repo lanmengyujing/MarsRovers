@@ -1,16 +1,9 @@
 package direction;
 
-import Game.OutOfBoundException;
+import exception.OutOfBoundException;
 import Game.Plateau;
 import Game.Rover;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dell
- * Date: 13-1-7
- * Time: 下午10:34
- * To change this template use File | Settings | File Templates.
- */
 public class WState implements State {
     Rover rover;
 
