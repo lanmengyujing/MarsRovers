@@ -1,8 +1,6 @@
 package com.app.game;
 
-import com.app.exception.CrashException;
 import com.app.exception.GameException;
-import com.app.exception.OutOfBoundException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,47 +10,33 @@ import static org.junit.Assert.assertThat;
 
 public class RoverBustTest {
     private RoverBust roverBust;
-    private MarsRoverGame game;
     private Rover rover;
     @Before
     public void setup() throws GameException {
-        game = new MarsRoverGame();
-        game.setPlateau("5 5");
+        Plateau.getInstance().setUpperX(5);
+        Plateau.getInstance().setUpperY(5);
         roverBust = new RoverBust();
         rover = new Rover();
     }
 
-    @Test (expected = OutOfBoundException.class)
-    public void should_Rover_Out_Bound_When_Original_Position_Is_9And7() throws GameException {
-        game.setRoverPlace("9 7 N", rover);
-        roverBust.addRover(rover);
-    }
-
-    @Test (expected = IllegalArgumentException.class)
-    public void should_Rover_Out_Bound_When_Original_Position_Is_Negative4And7() throws GameException {
-        game.setRoverInstruction("-4 7 t", rover);
-        roverBust.addRover(rover);
-    }
-
-
-    @Test  (expected = CrashException.class)
-    public void should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_3_S_Instruction_M() throws GameException {
-        game.setRoverPlace("1 1 n", rover);
-        game.setRoverInstruction("m", rover);
+    @Test
+    public void should_Rovers_Crash_When_Input_Rover_1_1_N_Instruction_M_And_Rover_1_3_S_Instruction_M(){
+        rover = new Rover(1 , 1, 'n');
+        rover.setInstruction("m");
         roverBust.addRover(rover);
         roverBust.runRover(rover);
 
-        Rover roverNext = new Rover();
-        game.setRoverPlace("1 3 s", roverNext);
-        game.setRoverInstruction("m", roverNext);
+        Rover roverNext = new Rover(1, 3, 's');
+        roverNext.setInstruction("mmlmml");
         roverBust.addRover(roverNext);
         roverBust.runRover(roverNext);
+        assertThat(roverNext.getPosY(), is(2));
     }
 
     @Test
-    public void should_OutPut_Be_1_4_W_When_Input_Rover_2_3_N_Instruction_LMRML() throws GameException {
-        game.setRoverPlace("2 3 n", rover);
-        game.setRoverInstruction("LMRML", rover);
+    public void should_OutPut_Be_1_4_W_When_Input_Rover_2_3_N_Instruction_LMRML() {
+        rover = new Rover(2 , 3, 'n');
+        rover.setInstruction("LMRML");
         roverBust.addRover(rover);
         roverBust.runRover(rover);
         assertThat(rover.getPosX(),is(1));
@@ -61,9 +45,10 @@ public class RoverBustTest {
     }
 
     @Test
-    public void should_OutPut_Be_1_2_N_When_Input_Rover_1_3_N_Instruction_LMLMLMLMM() throws GameException {
-        game.setRoverPlace("1 2 n", rover);
-        game.setRoverInstruction("LMLMLMLMM", rover);
+    public void should_OutPut_Be_1_2_N_When_Input_Rover_1_3_N_Instruction_LMLMLMLMM(){
+        rover = new Rover(1 , 2, 'n');
+        rover.setInstruction("LMLMLMLMM");
+
         roverBust.addRover(rover);
         roverBust.runRover(rover);
         assertThat(rover.getPosX(),is(1));
@@ -72,9 +57,10 @@ public class RoverBustTest {
     }
 
     @Test
-    public void should_OutPut_Be_5_1_E_When_Input_Rover_3_3_E_Instruction_MMRMMRMRRM() throws GameException {
-        game.setRoverPlace("3 3 e", rover);
-        game.setRoverInstruction("MMRMMRMRRM", rover);
+    public void should_OutPut_Be_5_1_E_When_Input_Rover_3_3_E_Instruction_MMRMMRMRRM() {
+        rover = new Rover(3 , 3, 'e');
+        rover.setInstruction("MMRMMRMRRM");
+
         roverBust.addRover(rover);
         roverBust.runRover(rover);
         assertThat(rover.getPosX(),is(5));

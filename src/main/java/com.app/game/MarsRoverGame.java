@@ -25,14 +25,6 @@ public class MarsRoverGame {
         bf = new BufferedReader(new StringReader(string));
     }
 
-    public static void main(String[] args) {
-        MarsRoverGame marsRoverGame = new MarsRoverGame();
-        marsRoverGame.init();
-        while (true) {
-            marsRoverGame.startGame();
-        }
-    }
-
     public void init() {
         while (true) {
             String strInit = readLine();

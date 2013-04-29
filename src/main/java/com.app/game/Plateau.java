@@ -8,6 +8,14 @@ public class Plateau {
     private Plateau() {
     }
 
+    public int getUpperY() {
+        return upperY;
+    }
+
+    public int getUpperX() {
+        return upperX;
+    }
+
     public static Plateau getInstance() {
         if (plateau == null) {
             plateau = new Plateau();
@@ -26,4 +34,6 @@ public class Plateau {
     public boolean isInRange(int x, int y) {
         return x >= 0 && y >= 0 && x <= upperX && y <= upperY;
     }
+
+
 }

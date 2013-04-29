@@ -1,7 +1,6 @@
 package com.app.game;
 
 import com.app.exception.CrashException;
-import com.app.exception.GameException;
 import com.app.exception.OutOfBoundException;
 
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class RoverBust {
             }
             try{
                 checkCrash(rover);
-            }catch (GameException e){
+            }catch (CrashException e){
                 System.out.println(e.getMessage());
                 return;
             }

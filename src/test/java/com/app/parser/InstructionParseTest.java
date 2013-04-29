@@ -15,4 +15,9 @@ public class InstructionParseTest {
         assertThat( parser.getInsruction(), is("MMRRLL") );
     }
 
+    @Test(expected = WrongCommandException.class)
+    public void should_be_invalid_when_input_ab12c() throws WrongCommandException {
+        parser.parse("ab12c");
+    }
+
 }

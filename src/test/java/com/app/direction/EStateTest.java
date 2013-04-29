@@ -9,13 +9,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created with IntelliJ IDEA.
- * User: twer
- * Date: 4/29/13
- * Time: 6:25 PM
- * To change this template use File | Settings | File Templates.
- */
+
 public class EStateTest {
     private EState state;
     private Rover rover;
@@ -34,7 +28,6 @@ public class EStateTest {
 
     @Test
     public void should_get_south_when_turn_right(){
-
         assertThat((state.turnRight() instanceof SState) ,is(true));
     }
 

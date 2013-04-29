@@ -63,10 +63,6 @@ public class Rover {
         }
     }
 
-    public void setOrientation(State orientation) {
-        this.orientation = orientation;
-    }
-
     public State getOrientation() {
         return orientation;
     }

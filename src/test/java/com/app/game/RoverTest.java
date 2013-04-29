@@ -58,8 +58,6 @@ public class RoverTest {
     @Test
     public void should_print_RIP_when_rover_is_out_bound() {
         rover = new Rover("Ton", -2, 0, 'N');
-//        Plateau plateau = mock(Plateau.class);
-//        when(mock(Plateau.class).getInstance().isInRange(-2, 0)).thenReturn(false);
         assertThat(rover.toString(), equalTo("-2 0 N RIP"));
     }
 

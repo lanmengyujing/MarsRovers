@@ -1,5 +1,6 @@
 package com.app.parser;
 
+import com.app.exception.WrongInputForPlateauException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,5 +20,10 @@ public class PlateauParserTest {
         parser.parse("5 5");
         assertThat( parser.getUpperX(), is(5) );
         assertThat( parser.getUpperY(), is(5) );
+    }
+
+    @Test(expected = WrongInputForPlateauException.class)
+    public void should_be_invalid_when_input_ab12c() throws WrongInputForPlateauException {
+        parser.parse("4y");
     }
 }
