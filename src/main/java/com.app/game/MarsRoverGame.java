@@ -25,23 +25,52 @@ public class MarsRoverGame {
         bf = new BufferedReader(new StringReader(string));
     }
 
+    public static void main(String[] args) {
+        MarsRoverGame marsRoverGame = new MarsRoverGame();
+        marsRoverGame.init();
+        while (true) {
+            marsRoverGame.startGame();
+        }
+    }
+
     public void init() {
-        String strInit = readLine();
-        setPlateau(strInit);
+        while (true) {
+            String strInit = readLine();
+            try {
+                setPlateau(strInit);
+                break;
+            } catch (GameException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     public void startGame() {
         Rover rover = new Rover();
+        while (true) {
+            String placeCommand = readLine();
+            try {
+                setRoverPlace(placeCommand, rover);
+                bust.addRover(rover);
+                break;
+            } catch (GameException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
-        String placeCommand = readLine();
-        setRoverPlace(placeCommand, rover);
-        bust.addRover(rover);
+        while (true) {
+            String strCommand = readLine();
+            try {
+                setRoverInstruction(strCommand, rover);
+                break;
+            } catch (GameException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
-        String strCommand = readLine();
-        setRoverInstruction(strCommand, rover);
-
+        System.out.println("rover begin to move");
         bust.runRover(rover);
-        System.out.println(rover.toString());
+        System.out.println("the final place of rover is:"+  rover.toString());
     }
 
 
@@ -55,46 +84,24 @@ public class MarsRoverGame {
         return str;
     }
 
-
-    public void setPlateau(String area) {
+    public void setPlateau(String area) throws GameException {
         InitCommand initCommand = new PlateauInitialization(area);
         setInstruction(initCommand);
     }
 
-    public void setRoverPlace(String placeStr, Rover rover) {
+    public void setRoverPlace(String placeStr, Rover rover) throws GameException {
         InitCommand initCommand = new PlaceInitialization(placeStr, rover);
         setInstruction(initCommand);
     }
 
-    public void setRoverInstruction(String instruction, Rover rover) {
+    public void setRoverInstruction(String instruction, Rover rover) throws GameException {
         InitCommand initCommand = new InstructionInitialization(instruction, rover);
         setInstruction(initCommand);
     }
 
-    private void setInstruction(InitCommand initCommand) {
+    private void setInstruction(InitCommand initCommand) throws GameException {
         this.initCommand = initCommand;
-        initialize();
-    }
-
-    public void setInitCommand(InitCommand initCommand) {
-        this.initCommand = initCommand;
-    }
-
-    private void initialize() {
-        try {
-            initCommand.configure();
-        } catch (GameException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-
-    public static void main(String[] args) {
-        MarsRoverGame marsRoverGame = new MarsRoverGame();
-        marsRoverGame.init();
-        while (true) {
-            marsRoverGame.startGame();
-        }
+        initCommand.configure();
     }
 
 

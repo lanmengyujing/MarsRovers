@@ -111,11 +111,11 @@ public class Rover {
     }
 
     private void turnRight() {
-        orientation.turnRight();
+        orientation = orientation.turnRight();
     }
 
     private void turnLeft() {
-        orientation.turnLeft();
+        orientation = orientation.turnLeft();
     }
 
     @Override

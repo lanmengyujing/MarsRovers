@@ -20,13 +20,13 @@ public class WState implements State {
     }
 
     @Override
-    public void turnLeft() {
-        rover.setOrientation(new SState(rover));
+    public State turnLeft() {
+        return new SState(rover);
     }
 
     @Override
-    public void turnRight() {
-        rover.setOrientation(new NState(rover));
+    public State turnRight() {
+        return new NState(rover);
     }
 
     @Override

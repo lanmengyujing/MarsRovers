@@ -20,13 +20,13 @@ public class EState implements State {
     }
 
     @Override
-    public void turnLeft() {
-        rover.setOrientation( new NState(rover));
+    public State turnLeft() {
+        return new NState(rover);
     }
 
     @Override
-    public void turnRight() {
-        rover.setOrientation( new SState(rover));
+    public State turnRight() {
+        return new SState(rover);
     }
 
     @Override

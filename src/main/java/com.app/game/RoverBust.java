@@ -18,7 +18,6 @@ public class RoverBust {
             if ( !(roverIn.hashCode() == rover.hashCode() && roverIn.equals(rover))
                     && (roverIn.getPosX() == rover.getPosX())
                     && (roverIn.getPosY() == rover.getPosY())) {
-                System.out.println("Caution:  Rover " + rover.getName() + " Crash  Rover " + roverIn.getName() );
                 throw new CrashException();
             }
         }
@@ -32,11 +31,13 @@ public class RoverBust {
                 rover.operation(command);
             } catch (OutOfBoundException e) {
                 System.out.println(e.getMessage());
+                return;
             }
             try{
                 checkCrash(rover);
             }catch (GameException e){
                 System.out.println(e.getMessage());
+                return;
             }
         }
     }

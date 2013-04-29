@@ -6,9 +6,9 @@ public interface State {
 
     public void forward() throws OutOfBoundException;
 
-    public void turnLeft();
+    public State turnLeft();
 
-    public void turnRight();
+    public State turnRight();
 
     public char orientationName();
 }
