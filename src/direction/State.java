@@ -1,8 +1,10 @@
 package direction;
 
+import exception.OutOfBoundException;
+
 public interface State {
 
-    public void forward();
+    public void forward() throws OutOfBoundException;
 
     public void turnLeft();
 

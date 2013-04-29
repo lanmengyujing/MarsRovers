@@ -1,6 +1,7 @@
 package Initialization;
 
 import Game.Rover;
+import exception.GameException;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -8,7 +9,7 @@ import static org.junit.Assert.assertThat;
 
 public class PlaceInitializationTest {
     @Test
-    public void should_rover_in_23N_when_input_23N() {
+    public void should_rover_in_23N_when_input_23N() throws GameException {
         Rover rover = new Rover();
         PlaceInitialization initialization = new PlaceInitialization("2 3 N", rover);
         initialization.configure();

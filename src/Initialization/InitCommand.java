@@ -1,5 +1,7 @@
 package Initialization;
 
+import exception.GameException;
+
 public abstract class InitCommand {
     String command;
 
@@ -7,6 +9,5 @@ public abstract class InitCommand {
         this.command = command;
     }
 
-    public abstract void configure();
-
+    public abstract void configure() throws GameException;
 }

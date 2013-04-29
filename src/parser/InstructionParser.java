@@ -1,17 +1,19 @@
 package parser;
 
+import exception.WrongCommandException;
+
 public class InstructionParser implements parser {
     private String regEx = "^[L|M|R]*$";
     String instruction;
 
     @Override
-    public void parse(String instruction) {
+    public void parse(String instruction) throws WrongCommandException {
         instruction = instruction.toUpperCase();
         try {
             Match.matchCondition(regEx, instruction);
             this.instruction = instruction;
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("The input commands for rover are not valid!");
+            throw new WrongCommandException();
         }
     }
 

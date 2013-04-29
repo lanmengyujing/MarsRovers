@@ -1,5 +1,11 @@
 package Game;
 
+import Initialization.InitCommand;
+import Initialization.InstructionInitialization;
+import Initialization.PlaceInitialization;
+import Initialization.PlateauInitialization;
+import exception.GameException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -19,17 +25,10 @@ public class MarsRoverGame {
         bf = new BufferedReader(new StringReader(string));
     }
 
-    public static void main(String[] args) {
-        MarsRoverGame marsRoverGame = new MarsRoverGame();
-        marsRoverGame.init();
-        while(true){
-            marsRoverGame.startGame();
-        }
-    }
-
     public void init() {
         client = new Client();
         String strInit = readLine();
+        setPlateau(strInit);
         client.setPlateau(strInit);
     }
 
@@ -56,5 +55,85 @@ public class MarsRoverGame {
             e.printStackTrace();
         }
         return str;
+    }
+
+        private InitCommand initCommand;
+
+        public void setInitCommand(InitCommand initCommand) {
+            this.initCommand = initCommand;
+        }
+
+        public void setPlateau(String area) {
+            InitCommand initCommand = new PlateauInitialization(area);
+            setInstruction(initCommand);
+        }
+
+        public void setRoverPlace(String placeStr, Rover rover) {
+            InitCommand initCommand = new PlaceInitialization(placeStr, rover);
+            setInstruction(initCommand);
+        }
+
+        public void setRoverInstruction(String instruction, Rover rover) {
+            InitCommand initCommand = new InstructionInitialization(instruction, rover);
+            setInstruction(initCommand);
+        }
+
+        private void setInstruction(InitCommand initCommand) {
+            setInitCommand(initCommand);
+            initialize();
+        }
+
+        private void initialize() {
+            try {
+                initCommand.configure();
+            } catch (GameException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+
+    public static void main(String[] args) {
+        MarsRoverGame marsRoverGame = new MarsRoverGame();
+        marsRoverGame.init();
+        while(true){
+            marsRoverGame.startGame();
+        }
+    }
+
+    public static class Client {
+        private InitCommand initCommand;
+
+        public void setInitCommand(InitCommand initCommand) {
+            this.initCommand = initCommand;
+        }
+
+        public void setPlateau(String area) {
+            InitCommand initCommand = new PlateauInitialization(area);
+            setInstruction(initCommand);
+        }
+
+        public void setRoverPlace(String placeStr, Rover rover) {
+            InitCommand initCommand = new PlaceInitialization(placeStr, rover);
+            setInstruction(initCommand);
+        }
+
+        public void setRoverInstruction(String instruction, Rover rover) {
+            InitCommand initCommand = new InstructionInitialization(instruction, rover);
+            setInstruction(initCommand);
+        }
+
+        private void setInstruction(InitCommand initCommand) {
+            setInitCommand(initCommand);
+            initialize();
+        }
+
+        private void initialize() {
+            try {
+                initCommand.configure();
+            } catch (GameException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
     }
 }

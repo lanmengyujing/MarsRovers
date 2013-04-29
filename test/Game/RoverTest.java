@@ -1,5 +1,6 @@
 package Game;
 
+import exception.OutOfBoundException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,19 +36,19 @@ public class RoverTest {
     }
 
     @Test
-    public void should_Orientation_Be_W_When_Command_is_L() {
+    public void should_Orientation_Be_W_When_Command_is_L() throws OutOfBoundException {
         rover.operation('L');
         assertThat(rover.getOrientation().orientationName(), is('W'));
     }
 
     @Test
-    public void should_Orientation_Be_E_When_Command_is_R() {
+    public void should_Orientation_Be_E_When_Command_is_R() throws OutOfBoundException {
         rover.operation('r');
         assertThat(rover.getOrientation().orientationName(), is('E'));
     }
 
     @Test
-    public void should_PosY_Be_1_When_Command_is_M() {
+    public void should_PosY_Be_1_When_Command_is_M() throws OutOfBoundException {
         rover.operation('m');
         assertThat(rover.getPosY(), is(1));
     }

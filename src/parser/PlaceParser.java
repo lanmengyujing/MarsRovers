@@ -1,5 +1,7 @@
 package parser;
 
+import exception.WrongInputForRoverException;
+
 public class PlaceParser implements parser {
     String regEx = "^\\s*\\d*+\\s+\\d*+\\s+[N|S|W|E]\\s*$";
     int posX;
@@ -7,7 +9,7 @@ public class PlaceParser implements parser {
     char orientation;
 
     @Override
-    public void parse(String posAndOrientation) {
+    public void parse(String posAndOrientation) throws WrongInputForRoverException {
         posAndOrientation = posAndOrientation.toUpperCase();
         try {
             Match.matchCondition(regEx, posAndOrientation);
@@ -16,7 +18,7 @@ public class PlaceParser implements parser {
             posY = Integer.valueOf(posAndOri[1]);
             orientation = posAndOri[2].charAt(0);
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("The input position or orientation for rover is not valid!");
+            throw new WrongInputForRoverException();
         }
     }
 

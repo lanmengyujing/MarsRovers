@@ -1,6 +1,7 @@
 package Initialization;
 
 import Game.Rover;
+import exception.GameException;
 import parser.InstructionParser;
 
 public class InstructionInitialization extends InitCommand {
@@ -12,7 +13,7 @@ public class InstructionInitialization extends InitCommand {
     }
 
     @Override
-    public void configure() {
+    public void configure() throws GameException{
         InstructionParser parser = new InstructionParser();
         parser.parse(command);
         rover.setInstruction(parser.getInsruction());

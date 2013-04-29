@@ -2,6 +2,7 @@ package Game;
 
 import exception.CrashException;
 import exception.GameException;
+import exception.OutOfBoundException;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ public class RoverBust {
         roverList.add(rover);
     }
 
-    public void checkCrash(Rover rover) {
+    public void checkCrash(Rover rover) throws CrashException {
         for (Rover roverIn : roverList) {
             if ( !(roverIn.hashCode() == rover.hashCode() && roverIn.equals(rover))
                     && (roverIn.getPosX() == rover.getPosX())
@@ -23,11 +24,15 @@ public class RoverBust {
         }
     }
 
-    public void runRover(Rover rover){
+    public void runRover(Rover rover) {
         String instruction = rover.getInstruction();
         for(int index = 0; index < instruction.length(); index ++){
             char command = instruction.charAt(index);
-            rover.operation(command);
+            try {
+                rover.operation(command);
+            } catch (OutOfBoundException e) {
+                System.out.println(e.getMessage());
+            }
             try{
                 checkCrash(rover);
             }catch (GameException e){

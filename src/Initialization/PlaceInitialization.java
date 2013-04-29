@@ -1,5 +1,6 @@
 package Initialization;
 
+import exception.GameException;
 import exception.OutOfBoundException;
 import Game.Plateau;
 import Game.Rover;
@@ -14,7 +15,7 @@ public class PlaceInitialization extends InitCommand {
     }
 
     @Override
-    public void configure() {
+    public void configure() throws GameException {
         PlaceParser parser = new PlaceParser();
         parser.parse(command);
         if (Plateau.getInstance().isInRange(parser.getPosX(), parser.getPosY())) {

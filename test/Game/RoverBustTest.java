@@ -11,11 +11,11 @@ import static org.junit.Assert.assertThat;
 
 public class RoverBustTest {
     private RoverBust roverBust;
-    private Client client;
+    private MarsRoverGame.Client client;
     private Rover rover;
     @Before
     public void setup(){
-        client = new Client();
+        client = new MarsRoverGame.Client();
         client.setPlateau("5 5");
         roverBust = new RoverBust();
         rover = new Rover();

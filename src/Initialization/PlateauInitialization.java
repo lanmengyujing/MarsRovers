@@ -1,6 +1,7 @@
 package Initialization;
 
 import Game.Plateau;
+import exception.GameException;
 import parser.PlateauParser;
 
 public class PlateauInitialization extends InitCommand {
@@ -10,7 +11,7 @@ public class PlateauInitialization extends InitCommand {
     }
 
     @Override
-    public void configure() {
+    public void configure() throws GameException {
         PlateauParser parser = new PlateauParser();
         parser.parse(command);
         Plateau.getInstance().setUpperX(parser.getUpperX());

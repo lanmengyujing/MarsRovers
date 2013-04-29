@@ -1,5 +1,6 @@
 package Game;
-import direction.*;
+import direction.State;
+import exception.OutOfBoundException;
 
 import java.lang.reflect.Constructor;
 
@@ -80,15 +81,14 @@ public class Rover {
         return instruction;
     }
 
-    public boolean isInPlateau(int x, int y) {
+    public boolean isInPlateau(int x, int y)  {
         if (!Plateau.getInstance().isInRange(x, y)) {
-            System.out.println("Caution " + this.name + " is out of bound ");
             return false;
         }
         return true;
     }
 
-    public void operation(char instruction){
+    public void operation(char instruction) throws OutOfBoundException {
         instruction = Character.toUpperCase(instruction);
         switch (instruction) {
             case 'M':
@@ -106,7 +106,7 @@ public class Rover {
 
     }
 
-    private void forward() {
+    private void forward() throws OutOfBoundException {
         orientation.forward();
     }
 

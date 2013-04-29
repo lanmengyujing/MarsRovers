@@ -12,7 +12,7 @@ public class WState implements State {
     }
 
     @Override
-    public void forward() {
+    public void forward() throws OutOfBoundException {
         if (!Plateau.getInstance().isInRange(rover.getPosX() - 1, rover.getPosY())){
             throw new OutOfBoundException();
         }
