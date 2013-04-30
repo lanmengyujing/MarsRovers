@@ -18,7 +18,7 @@ public class PlaceParser implements parser {
             posY = Integer.valueOf(posAndOri[1]);
             orientation = posAndOri[2].charAt(0);
         } catch (IllegalArgumentException e) {
-            throw new WrongInputForRoverException();
+            throw new WrongInputForRoverException(WrongInputForRoverException.ROVER_INIT_TIP);
         }
     }
 

@@ -13,11 +13,11 @@ public class InstructionParser implements parser {
             Match.matchCondition(regEx, instruction);
             this.instruction = instruction;
         } catch (IllegalArgumentException e) {
-            throw new WrongCommandException();
+            throw new WrongCommandException(WrongCommandException.COMMAND_TIP);
         }
     }
 
-    public String getInsruction() {
+    public String getInstruction() {
         return instruction;
     }
 }

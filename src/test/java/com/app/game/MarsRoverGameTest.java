@@ -38,6 +38,14 @@ public class MarsRoverGameTest {
         assertThat(Plateau.getInstance().getUpperY(), is(6));
     }
 
+
+    @Test
+    public void should_rover_command_be_MMRL_when_input_mmrl() throws GameException {
+        Rover rover = new Rover();
+        marsRoverGame.setRoverInstruction("mmrl", rover);
+        assertThat(rover.getInstruction(), is("MMRL"));
+    }
+
     @Test
     public void should_rover_in_23N_when_set_rover_23n() throws GameException {
         Rover rover = new Rover();
@@ -48,11 +56,5 @@ public class MarsRoverGameTest {
         assertThat(rover.getOrientation() instanceof NState, is(true));
     }
 
-    @Test
-    public void should_rover_command_be_MMRL_when_input_mmrl() throws GameException {
-        Rover rover = new Rover();
-        marsRoverGame.setRoverInstruction("mmrl", rover);
-        assertThat(rover.getInstruction(), is("MMRL"));
-    }
 
 }

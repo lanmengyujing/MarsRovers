@@ -15,7 +15,7 @@ public class PlateauParser implements parser {
             upperX = Integer.valueOf(inputArea[0]);
             upperY = Integer.valueOf(inputArea[1]);
         } catch (IllegalArgumentException e) {
-            throw new WrongInputForPlateauException();
+            throw new WrongInputForPlateauException(WrongInputForPlateauException.PLATEAU_INIT_TIP);
         }
     }
 

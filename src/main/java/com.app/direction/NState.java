@@ -14,7 +14,7 @@ public class NState implements State {
     @Override
     public void forward() throws OutOfBoundException {
         if (!Plateau.getInstance().isInRange(rover.getPosX(), rover.getPosY() + 1 )){
-            throw new OutOfBoundException();
+            throw new OutOfBoundException(OutOfBoundException.OUT_OF_BOUND);
         }
         rover.setPosY(rover.getPosY() + 1);
     }

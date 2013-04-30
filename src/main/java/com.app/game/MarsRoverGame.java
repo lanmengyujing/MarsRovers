@@ -95,6 +95,4 @@ public class MarsRoverGame {
         this.initCommand = initCommand;
         initCommand.configure();
     }
-
-
 }

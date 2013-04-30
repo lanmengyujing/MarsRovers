@@ -16,6 +16,6 @@ public class InstructionInitialization extends InitCommand {
     public void configure() throws GameException{
         InstructionParser parser = new InstructionParser();
         parser.parse(command);
-        rover.setInstruction(parser.getInsruction());
+        rover.setInstruction(parser.getInstruction());
     }
 }

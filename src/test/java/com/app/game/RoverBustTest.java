@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 
-public class RoverBustTest {
+public class  RoverBustTest {
     private RoverBust roverBust;
     private Rover rover;
     @Before

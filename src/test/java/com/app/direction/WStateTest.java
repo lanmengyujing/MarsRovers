@@ -10,32 +10,30 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-
-public class EStateTest {
-    private EState state;
+public class WStateTest {
+    private WState state;
     private Rover rover;
     @Before
     public void setUp() throws Exception {
-        rover = new Rover(5, 2,'n');
-        state = new EState(rover);
+        rover = new Rover(5, 2,'w');
+        state = new WState(rover);
         Plateau.getInstance().setUpperX(10);
         Plateau.getInstance().setUpperY(10);
     }
 
     @Test
-    public void should_get_north_when_turn_left(){
-        assertThat(state.turnLeft() ,instanceOf( NState.class));
+    public void should_get_north_when_turn_right(){
+        assertThat(state.turnRight() ,instanceOf(NState.class));
     }
 
     @Test
-    public void should_get_south_when_turn_right(){
-        assertThat(state.turnRight() ,instanceOf( SState.class));
+    public void should_get_south_when_turn_left(){
+        assertThat(state.turnLeft() ,instanceOf(SState.class));
     }
 
     @Test
     public void should_rover_move_when_forward() throws OutOfBoundException {
         state.forward();
-        assertThat(rover.getPosX(), is(6));
+        assertThat(rover.getPosX(), is(4));
     }
-
 }

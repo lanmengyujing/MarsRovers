@@ -16,7 +16,7 @@ public class InstructionInitializationTest {
         Rover rover = new Rover();
         InstructionInitialization initialization = new InstructionInitialization("mrml", rover);
         InstructionParser parser = mock(InstructionParser.class);
-        when(parser.getInsruction()).thenReturn("MRML");
+        when(parser.getInstruction()).thenReturn("MRML");
         initialization.configure();
         assertThat(rover.getInstruction(), is("MRML"));
     }

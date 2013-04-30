@@ -23,7 +23,7 @@ public class PlaceInitialization extends InitCommand {
             rover.setPosY(parser.getPosY());
             rover.setOrientation(parser.getOrientation());
         } else {
-            throw new OutOfBoundException();
+            throw new OutOfBoundException(OutOfBoundException.OUT_OF_BOUND);
         }
     }
 }

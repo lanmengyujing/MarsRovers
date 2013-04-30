@@ -17,7 +17,7 @@ public class RoverBust {
             if ( !(roverIn.hashCode() == rover.hashCode() && roverIn.equals(rover))
                     && (roverIn.getPosX() == rover.getPosX())
                     && (roverIn.getPosY() == rover.getPosY())) {
-                throw new CrashException();
+                throw new CrashException(CrashException.CRASH_TIP);
             }
         }
     }
