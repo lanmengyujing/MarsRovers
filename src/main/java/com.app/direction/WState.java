@@ -1,7 +1,6 @@
 package com.app.direction;
 
 import com.app.exception.OutOfBoundException;
-import com.app.game.Plateau;
 import com.app.game.Rover;
 
 public class WState implements State {
@@ -13,7 +12,7 @@ public class WState implements State {
 
     @Override
     public void forward() throws OutOfBoundException {
-        if (!Plateau.getInstance().isInRange(rover.getPosX() - 1, rover.getPosY())){
+        if (!rover.isInPlateau(rover.getPosX() - 1, rover.getPosY())){
             throw new OutOfBoundException(OutOfBoundException.OUT_OF_BOUND);
         }
         rover.setPosX(rover.getPosX() - 1);

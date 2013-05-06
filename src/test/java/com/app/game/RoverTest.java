@@ -8,16 +8,21 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class RoverTest {
     Rover rover;
+    Plateau plateau;
 
     @Before
     public void setup() {
         rover = new Rover("Iran", 0, 0, 'N');
-        Plateau.getInstance().setUpperX(5);
-        Plateau.getInstance().setUpperY(5);
-
+        plateau = mock(Plateau.class);
+        when(plateau.getUpperX()).thenReturn(5);
+        when(plateau.getUpperY()).thenReturn(5);
+        when(plateau.isInRange(0, 1)).thenReturn(true);
+        rover.setPlateau(plateau);
     }
 
     @Test
@@ -49,8 +54,6 @@ public class RoverTest {
 
     @Test
     public void should_PosY_Be_1_When_Command_is_M() throws OutOfBoundException {
-        Plateau.getInstance().setUpperX(5);
-        Plateau.getInstance().setUpperY(5);
         rover.operation('m');
         assertThat(rover.getPosY(), is(1));
     }
@@ -58,11 +61,9 @@ public class RoverTest {
     @Test
     public void should_print_RIP_when_rover_is_out_bound() {
         rover = new Rover("Ton", -2, 0, 'N');
+        rover.setPlateau(plateau);
         assertThat(rover.toString(), equalTo("-2 0 N RIP"));
     }
-
-
-
 
 }
 

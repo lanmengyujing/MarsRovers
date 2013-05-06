@@ -2,13 +2,18 @@ package com.app.parser;
 
 import com.app.exception.WrongInputForRoverException;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class PlaceParserTest {
     private PlaceParser parser;
+
+    @Rule
+    public ExpectedException expectedEx = ExpectedException.none();
 
     @Before
     public void setup() {
@@ -26,5 +31,6 @@ public class PlaceParserTest {
     @Test(expected = WrongInputForRoverException.class)
     public void should_throw_exception_when_input_23t() throws WrongInputForRoverException {
         parser.parse("2 3 t");
+        expectedEx.expectMessage("The input position or orientation for rover is not valid! try again");
     }
 }

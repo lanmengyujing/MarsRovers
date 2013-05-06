@@ -32,8 +32,8 @@ private Rover rover;
 
     @Test
     public void should_rover_move_when_forward() throws OutOfBoundException {
-        Plateau.getInstance().setUpperX(10);
-        Plateau.getInstance().setUpperY(10);
+        Plateau plateau = new Plateau(5, 5);
+        rover.setPlateau(plateau);
         state.forward();
         assertThat(rover.getPosY(), is(1));
     }

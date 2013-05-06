@@ -18,28 +18,28 @@ import static org.junit.Assert.assertThat;
  * To change this template use File | Settings | File Templates.
  */
 public class NStateTest {
-    Rover rover;
-    NState state;
+    private Rover rover;
+    private NState state;
+
     @Before
-    public void setup(){
-        rover = new Rover(2 ,3 , 'n');
+    public void setup() {
+        rover = new Rover(2, 3, 'n');
         state = new NState(rover);
     }
-
     @Test
-    public void should_in_east_when_turn_right(){
+    public void should_in_east_when_turn_right() {
         assertThat(state.turnRight(), instanceOf(EState.class));
     }
 
     @Test
-    public void should_in_west_when_turn_left(){
-        assertThat(state.turnLeft(),instanceOf(WState.class));
+    public void should_in_west_when_turn_left() {
+        assertThat(state.turnLeft(), instanceOf(WState.class));
     }
 
     @Test
     public void should_rover_in_4_when_forward() throws OutOfBoundException {
-        Plateau.getInstance().setUpperX(7);
-        Plateau.getInstance().setUpperY(7);
+        Plateau plateau = new Plateau(7, 7);
+        rover.setPlateau(plateau);
         state.forward();
         assertThat(rover.getPosY(), is(4));
     }

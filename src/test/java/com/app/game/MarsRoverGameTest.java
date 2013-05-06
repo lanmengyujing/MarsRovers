@@ -11,7 +11,6 @@ import static org.junit.Assert.assertThat;
 public class MarsRoverGameTest {
     private MarsRoverGame marsRoverGame;
 
-
     @Before
     public void setup(){
         marsRoverGame = new MarsRoverGame();
@@ -34,8 +33,9 @@ public class MarsRoverGameTest {
     @Test
     public void should_init_plateau_when_input() throws GameException {
         marsRoverGame.setPlateau("5 6");
-        assertThat(Plateau.getInstance().getUpperX(), is(5));
-        assertThat(Plateau.getInstance().getUpperY(), is(6));
+        Plateau plateau = marsRoverGame.getPlateau();
+        assertThat(plateau.getUpperX(), is(5));
+        assertThat(plateau.getUpperY(), is(6));
     }
 
 

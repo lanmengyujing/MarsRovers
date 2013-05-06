@@ -18,8 +18,7 @@ public class EStateTest {
     public void setUp() throws Exception {
         rover = new Rover(5, 2,'n');
         state = new EState(rover);
-        Plateau.getInstance().setUpperX(10);
-        Plateau.getInstance().setUpperY(10);
+
     }
 
     @Test
@@ -34,6 +33,8 @@ public class EStateTest {
 
     @Test
     public void should_rover_move_when_forward() throws OutOfBoundException {
+        Plateau plateau = new Plateau(10 ,10);
+        rover.setPlateau(plateau);
         state.forward();
         assertThat(rover.getPosX(), is(6));
     }

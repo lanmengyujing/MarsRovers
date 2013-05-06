@@ -13,6 +13,8 @@ public class Rover {
 
     State orientation;
 
+    private Plateau plateau;
+
     public Rover (){
     }
 
@@ -27,6 +29,10 @@ public class Rover {
         this.posX = posX;
         this.posY = posY;
         setOrientation(orientation);
+    }
+
+    public void setPlateau(Plateau plateau) {
+        this.plateau = plateau;
     }
 
     public String getName() {
@@ -78,7 +84,7 @@ public class Rover {
     }
 
     public boolean isInPlateau(int x, int y)  {
-        if (!Plateau.getInstance().isInRange(x, y)) {
+        if (!plateau.isInRange(x, y)) {
             return false;
         }
         return true;

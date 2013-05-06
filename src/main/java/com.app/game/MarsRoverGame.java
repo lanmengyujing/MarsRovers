@@ -15,14 +15,17 @@ public class MarsRoverGame {
     private RoverBust bust = new RoverBust();
     private BufferedReader bf;
     private InitCommand initCommand;
+    private Plateau plateau;
 
     public MarsRoverGame() {
         InputStreamReader input = new InputStreamReader(System.in);
         bf = new BufferedReader(input);
+        plateau = new Plateau();
     }
 
     public MarsRoverGame(String string) {
         bf = new BufferedReader(new StringReader(string));
+        plateau = new Plateau();
     }
 
     public void init() {
@@ -77,12 +80,14 @@ public class MarsRoverGame {
     }
 
     public void setPlateau(String area) throws GameException {
-        InitCommand initCommand = new PlateauInitialization(area);
+        PlateauInitialization initCommand = new PlateauInitialization(area, plateau);
         setInstruction(initCommand);
+        plateau = initCommand.getPlateau();
     }
 
     public void setRoverPlace(String placeStr, Rover rover) throws GameException {
         InitCommand initCommand = new PlaceInitialization(placeStr, rover);
+        rover.setPlateau(plateau);
         setInstruction(initCommand);
     }
 
@@ -94,5 +99,9 @@ public class MarsRoverGame {
     private void setInstruction(InitCommand initCommand) throws GameException {
         this.initCommand = initCommand;
         initCommand.configure();
+    }
+
+    public Plateau getPlateau() {
+        return plateau;
     }
 }

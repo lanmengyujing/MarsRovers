@@ -13,12 +13,14 @@ import static org.junit.Assert.assertThat;
 public class WStateTest {
     private WState state;
     private Rover rover;
+    private Plateau plateau;
     @Before
     public void setUp() throws Exception {
         rover = new Rover(5, 2,'w');
         state = new WState(rover);
-        Plateau.getInstance().setUpperX(10);
-        Plateau.getInstance().setUpperY(10);
+
+        plateau = new Plateau(5, 5);
+        rover.setPlateau(plateau);
     }
 
     @Test

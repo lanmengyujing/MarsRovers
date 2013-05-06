@@ -16,8 +16,13 @@ public class PlaceInitializationTest {
     public void should_rover_in_23N_when_input_23N() throws GameException {
         Rover rover = new Rover();
         PlaceInitialization initialization = new PlaceInitialization("2 3 N", rover);
-        Plateau.getInstance().setUpperX(4);
-        Plateau.getInstance().setUpperY(5);
+
+//        Plateau plateau = mock(Plateau.class);
+//        when(plateau.getUpperX()).thenReturn(5);
+//        when(plateau.getUpperY()).thenReturn(5);
+        Plateau plateau1 = new Plateau(5, 5);
+        rover.setPlateau(plateau1);
+
 
         PlaceParser parser = mock(PlaceParser.class);
         when(parser.getPosX()).thenReturn(2);

@@ -5,7 +5,12 @@ public class Plateau {
     private int upperY;
     static Plateau plateau;
 
-    private Plateau() {
+    public Plateau(int upperX, int upperY) {
+        this.upperX = upperX;
+        this.upperY = upperY;
+    }
+
+    public Plateau() {
     }
 
     public int getUpperY() {
@@ -18,7 +23,7 @@ public class Plateau {
 
     public static Plateau getInstance() {
         if (plateau == null) {
-            plateau = new Plateau();
+            plateau = new Plateau(5 ,5);
         }
         return plateau;
     }

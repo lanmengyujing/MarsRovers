@@ -2,7 +2,6 @@ package com.app.initialization;
 
 import com.app.exception.GameException;
 import com.app.exception.OutOfBoundException;
-import com.app.game.Plateau;
 import com.app.game.Rover;
 import com.app.parser.PlaceParser;
 
@@ -18,7 +17,7 @@ public class PlaceInitialization extends InitCommand {
     public void configure() throws GameException {
         PlaceParser parser = new PlaceParser();
         parser.parse(command);
-        if (Plateau.getInstance().isInRange(parser.getPosX(), parser.getPosY())) {
+        if (rover.isInPlateau(parser.getPosX(), parser.getPosY())) {
             rover.setPosX(parser.getPosX());
             rover.setPosY(parser.getPosY());
             rover.setOrientation(parser.getOrientation());
